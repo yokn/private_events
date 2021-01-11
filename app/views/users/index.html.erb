@@ -25,3 +25,11 @@
 <br>
 
 <%= link_to 'New user', new_user_path %>
+<br>
+<br>
+<%= link_to 'Login', new_session_path %>
+<%= link_to 'Logout', logout_path %>
+<br>
+<p>Currently logged in as: <%= User.find(session[:current_user_id]).username %></p>
+
+
