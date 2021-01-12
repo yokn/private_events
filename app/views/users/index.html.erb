@@ -30,6 +30,6 @@
 <%= link_to 'Login', new_session_path %>
 <%= link_to 'Logout', logout_path %>
 <br>
-<p>Currently logged in as: <%= User.find(session[:current_user_id]).username %></p>
+<p>Currently logged in as: <%= User.find(session[:current_user_id]).username if session[:current_user_id]%></p>
 
 
