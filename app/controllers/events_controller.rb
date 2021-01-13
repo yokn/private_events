@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = User.find(session[:current_user_id]).events.build
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = User.find(session[:current_user_id]).events.build(event_params)
+    @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if @event.save

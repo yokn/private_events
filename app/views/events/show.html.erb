@@ -16,6 +16,10 @@
   <strong>Description</strong>
   <%= @event.description %>
 </p>
+<p>
+  <strong>Created by:</strong>
+  <%= @event.user.username%>
+</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

@@ -25,11 +25,12 @@
 <br>
 
 <%= link_to 'New user', new_user_path %>
+<%= link_to 'Events', events_path %>
 <br>
 <br>
-<%= link_to 'Login', new_session_path %>
-<%= link_to 'Logout', logout_path %>
+<%= (link_to 'Login', login_path) unless current_user%>
+<%= (link_to 'Logout', logout_path) if current_user %>
 <br>
-<p>Currently logged in as: <%= User.find(session[:current_user_id]).username if session[:current_user_id]%></p>
+<p>Currently logged in as: <%= current_user.username if current_user%></p>
 
 
