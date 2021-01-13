@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:login_fail] = 'Could not login'
     end
     # need to find a way to redirect back
-    redirect_to events_path
+    redirect_to root_path
   end
 
   def destroy
