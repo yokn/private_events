@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    session[:current_user_id] = @user.id
+    session[:current_user_id] = @user.id unless current_user
 
     redirect_to users_path
   end
