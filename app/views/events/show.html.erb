@@ -21,5 +21,30 @@
   <%= @event.user.username%>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Attendees</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event.attendees.each do |attendee| %>
+      <tr>
+        <td><%= link_to attendee.username , user_path(attendee) %></td>
+      </tr> 
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= button_to 'Attend', attend_path(user_id: current_user.id, event_id: @event.id)%>
+
+<br>
+<br>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+

@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
+  post 'attend', to: 'attendances#create'
 
   resources :users
   resources :sessions, only: %i[new create destroy]
   resources :events
+  resources :attendances
 end
