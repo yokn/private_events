@@ -29,11 +29,10 @@ class AttendancesController < ApplicationController
     a = Attendance.new(user_id: uid, event_id: eid)
     if a.save
       flash[:success] = 'Added to the attendance list!'
-      redirect_to event_path(eid)
     else
       flash[:error] = 'Failed'
-      render 'new'
     end
+    redirect_to event_path(eid)
   end
 
   # PATCH/PUT /attendances/1
