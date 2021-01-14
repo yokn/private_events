@@ -21,6 +21,23 @@
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Attended events</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.attended_events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name , event_path(event) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
