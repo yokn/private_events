@@ -24,13 +24,30 @@
 <table>
   <thead>
     <tr>
-      <th>Attended events</th>
+      <th>Previously attended events</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  <% prev = @user.attended_events.reject {|event| event.date > Time.current} %>
   <tbody>
-    <% @user.attended_events.each do |event| %>
+    <% prev.each do |event|  %>
+      <tr>
+        <td><%= link_to event.name , event_path(event) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Upcoming events</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% upcoming = @user.attended_events - prev%>
+  <tbody>
+    <% upcoming.each do |event|  %>
       <tr>
         <td><%= link_to event.name , event_path(event) %></td>
       </tr>
