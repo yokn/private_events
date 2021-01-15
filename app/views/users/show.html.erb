@@ -28,9 +28,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <% prev = @user.attended_events.reject {|event| event.date > Time.current} %>
   <tbody>
-    <% prev.each do |event|  %>
+    <% @user.attended_events.past.each do |event|  %>
       <tr>
         <td><%= link_to event.name , event_path(event) %></td>
       </tr>
@@ -45,9 +44,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <% upcoming = @user.attended_events - prev%>
   <tbody>
-    <% upcoming.each do |event|  %>
+    <% @user.attended_events.upcoming.each do |event|  %>
       <tr>
         <td><%= link_to event.name , event_path(event) %></td>
       </tr>
