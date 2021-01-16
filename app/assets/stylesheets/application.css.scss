@@ -14,3 +14,18 @@
  *= require_self
  */
  @import "bulma";
+
+ .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 94vh;
+}
+
+ .footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
