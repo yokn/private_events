@@ -1,0 +1,24 @@
+<div class="columns is-multiline">
+  <% events.each do |event| %>
+  <div class="column is-one-third">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">
+          <%= link_to event.name, event, class:"button is-link" %>
+          <div style="padding: 0.4vw;">
+            created by <%=link_to event.user.username%>
+          </div>
+        </div>
+        <div style="padding-right: 0.4vw;">
+          <div><i class="fas fa-calendar"> </i> <%= event.date%></div>
+          <div><i class="fas fa-map-marker-alt"> </i> <%= event.location%></div>
+          <div><i class="fas fa-user"> </i> <%= event.attendees.size %></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <%= event.description %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
