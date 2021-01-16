@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:current_user_id] = @user.id
       flash[:login_success] = 'Logged in!'
     else
-      flash[:login_fail] = 'Could not login'
+      flash[:error] = 'Could not login'
     end
     # need to find a way to redirect back
     redirect_to root_path
