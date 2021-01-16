@@ -1,47 +1,54 @@
-
-
 <h1 class="title">Events</h1>
 
-<table  class="table">
-  <thead>
-    <tr>
-      <th class="subtitle">Past events</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2 class="subtitle">Past events</h2>
 
-  <tbody>
-    <% @events.past.each do |event| %>
-      <tr>
-        <td><%= link_to event.name, event, class:"button is-link" %></td>
-        <td><i class="fas fa-user"> </i> <%= event.attendees.size %></td>
-        <td><i class="fas fa-calendar"> </i> <%= event.date %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<div class="columns is-multiline">
+  <% @events.past.each do |event| %>
+  <div class="column is-one-third">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">
+          <%= link_to event.name, event, class:"button is-link" %>
+        </div>
+        <div style="padding-right: 0.4vw;">
+          <div><i class="fas fa-calendar"> </i> <%= event.date%></div>
+          <div><i class="fas fa-map-marker-alt"> </i> <%= event.location%></div>
+          <div><i class="fas fa-user"> </i> <%= event.attendees.size %></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <%= event.description %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-  <thead>
-    <tr>
-      <th class="subtitle">Upcoming events</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2 class="subtitle">Upcoming events</h2>
 
-  <tbody>
-    <% @events.upcoming.each do |event| %>
-      <tr>
-        <td><%= link_to event.name, event, class:"button is-link" %></td>
-        <td><i class="fas fa-user"> </i> <%= event.attendees.size %></td>
-        <td><i class="fas fa-calendar"> </i> <%= event.date %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="columns is-multiline">
+  <% @events.upcoming.each do |event| %>
+  <div class="column is-one-third">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">
+          <%= link_to event.name, event, class:"button is-link" %>
+        </div>
+        <div style="padding-right: 0.5vw;">
+          <div><i class="fas fa-calendar"> </i> <%= event.date%></div>
+          <div><i class="fas fa-map-marker-alt"> </i> <%= event.location%></div>
+          <div><i class="fas fa-user"> </i> <%= event.attendees.size %></div>
+        </div>
+      </div>
+      <div class="card-content">
+        <%= event.description %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-
-
-
-<br>
+<br />
 
 <%= link_to 'New event', new_event_path %>
-<br>
+<br />
