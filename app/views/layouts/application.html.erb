@@ -36,7 +36,7 @@
         </div>
         <div class="navbar-end">
           <% unless current_user %>
-            <%= link_to 'Sign up', new_user_path, class:"button is-primary", style:"margin:5px" %>
+            <%= link_to 'Sign up', signup_path, class:"button is-primary", style:"margin:5px" %>
             <%= link_to 'Login', login_path, class:"button is-light", style:"margin:5px" %>
           <% end %>
           <div class="container" style="padding: 0.4vw;">
@@ -48,7 +48,6 @@
         </div>
       </nav>
     </header>
-    <br />
     <div class="main">
       <section class="section">
         <body>

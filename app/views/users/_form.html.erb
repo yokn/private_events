@@ -1,9 +1,26 @@
 <%= form_with(model: user, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <div class="box">
+              <div class="field" style="color:black; font-weight:bold">
+                <%= form.label :username %>
+                <%= form.text_field :username %>
+              </div>
+              <div class="actions">
+                <%= form.submit  %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+  <style>
+    .section{
+    margin: 0px;
+    padding: 0px;
+    }
+    <style>
