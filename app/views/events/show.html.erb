@@ -1,5 +1,3 @@
-
-
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
@@ -8,7 +6,7 @@
   <strong>Date</strong>
   <%= @event.date %>
 </p>
-  <p>
+<p>
   <strong>Location</strong>
   <%= @event.location %>
 </p>
@@ -20,7 +18,6 @@
   <strong>Created by</strong>
   <%= @event.user.username%>
 </p>
-
 <table>
   <thead>
     <tr>
@@ -28,24 +25,18 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @event.attendees.each do |attendee| %>
       <tr>
         <td><%= link_to attendee.username , user_path(attendee) %></td>
-      </tr> 
+      </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-
 <%= button_to 'Attend', attend_path(user_id: current_user.id, event_id: @event.id)%>
-
 <br>
 <br>
-
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', events_path %>
-
-
