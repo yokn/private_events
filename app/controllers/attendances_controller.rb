@@ -24,7 +24,7 @@ class AttendancesController < ApplicationController
   # POST /attendances
   # POST /attendances.json
   def create
-    uid = params[:user_id]
+    uid = params[:user_id] || dig_user
     eid = params[:event_id]
     a = Attendance.new(user_id: uid, event_id: eid)
     if a.save
@@ -33,6 +33,11 @@ class AttendancesController < ApplicationController
       flash[:error] = 'Failed'
     end
     redirect_to event_path(eid)
+  end
+
+  def invite
+    @attendance = Attendance.new
+    render :invite, event_id: params[:event_id]
   end
 
   # PATCH/PUT /attendances/1
@@ -68,6 +73,11 @@ class AttendancesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def attendance_params
-    params.fetch(:attendance, {}).permit(:user_id, :event_id)
+    params.fetch(:attendance, {}).permit(:user_id, :event_id, :attendee)
+  end
+
+  def dig_user
+    User.find_by_username(params[:attendance].dig(:attendee)).id
+  rescue StandardError
   end
 end
