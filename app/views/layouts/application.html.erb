@@ -24,11 +24,11 @@
           <br>
           <% flash.each do |type, msg| %>
             <% if type == "error" %>
-              <div class="navbar-item" style="color:red; padding-left: 1vw;">
+              <div class="navbar-item has-text-danger" padding-left: 1vw;">
                 <%= msg %>
               </div>
             <% else %>
-              <div class="navbar-item" style="color:green; padding-left: 1vw;">
+              <div class="navbar-item has-text-primary" padding-left: 1vw;">
                 <%= msg %>
               </div>
             <% end %>
