@@ -37,7 +37,7 @@
 <% if @event.date > Time.current && !current_user.in?(@event.attendees)%>
   <%= (button_to 'Attend', attend_path(user_id: current_user.id, event_id: @event.id)) %>
 <% end %>
-<%= link_to 'Invite', invite_path(event_id: @event.id) if @event.user.username == current_user.username%>
+<%= button_to 'Invite', invite_path(event_id: @event.id),class:"button",method: :get if @event.user.username == current_user.username%>
 <br>
 <br>
 <%= link_to 'Edit', edit_event_path(@event) %> |
