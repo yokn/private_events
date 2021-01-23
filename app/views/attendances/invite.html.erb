@@ -1,0 +1,12 @@
+<h1>Inviting User</h1>
+<%= form_with(model: @attendance, local: true) do |form| %>
+  <div class="field" style="color:black; font-weight:bold">
+    <%= form.label :attendee %>
+    <%= form.text_field :attendee %>
+    <%= hidden_field_tag 'event_id', params[:event_id]  %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Invite" %>
+  </div>
+<% end %>
+<%= link_to 'Back', events_path %>
