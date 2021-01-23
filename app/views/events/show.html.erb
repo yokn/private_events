@@ -34,7 +34,7 @@
   </tbody>
 </table>
 <br>
-<%= button_to 'Attend', attend_path(user_id: current_user.id, event_id: @event.id)%>
+<%= (button_to 'Attend', attend_path(user_id: current_user.id, event_id: @event.id)) unless @event.date < Time.current%>
 <br>
 <br>
 <%= link_to 'Edit', edit_event_path(@event) %> |
