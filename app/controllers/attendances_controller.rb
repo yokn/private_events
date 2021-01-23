@@ -36,7 +36,7 @@ class AttendancesController < ApplicationController
   end
 
   def invite
-    @attendance = Attendance.new(event_id: params[:event_id])
+    @attendance = Attendance.new
     render :invite, event_id: params[:event_id]
   end
 
