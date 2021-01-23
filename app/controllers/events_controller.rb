@@ -57,6 +57,8 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    return redirect_to @event, flash: { error: 'You are not the creator of this event' } if current_user != @event.user
+
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
