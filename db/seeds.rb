@@ -1,14 +1,5 @@
 # frozen_string_literal: true
 
-User.create!([
-               { username: 'admin' },
-               { username: 'yokn' },
-               { username: 'user3' },
-               { username: 'Tom' },
-               { username: 'DevOps ' },
-               { username: 'Back-end' },
-               { username: 'Front-end' }
-             ])
 Event.create!([
                 { name: 'my new event!', date: '2021-02-06', location: 'my house', description: 'my description', user_id: 2, private: 0 },
                 { name: 'Birthday Party', date: '2021-01-23', location: "Bob's house", description: 'Bring gifts!', user_id: 1, private: 0 },
