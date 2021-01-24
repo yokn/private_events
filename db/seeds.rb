@@ -7,8 +7,7 @@ User.create!([
                { username: 'Tom' },
                { username: 'DevOps ' },
                { username: 'Back-end' },
-               { username: 'Front-end' },
-               { username: 'change' }
+               { username: 'Front-end' }
              ])
 Event.create!([
                 { name: 'my new event!', date: '2021-02-06', location: 'my house', description: 'my description', user_id: 2, private: 0 },
@@ -20,3 +19,20 @@ Event.create!([
                 { name: 'Private event', date: '2021-01-30', location: 'localhost:3000', description: 'You may only attend this event if you were invited.', user_id: 1, private: 1 },
                 { name: 'IT Meeting', date: '2021-01-25', location: 'Meeting room 2B', description: 'We will discuss what we did last week and set our targets for this week.', user_id: 1, private: 1 }
               ])
+Attendance.create!([
+                     { user_id: 2, event_id: 2 },
+                     { user_id: 3, event_id: 2 },
+                     { user_id: 1, event_id: 2 },
+                     { user_id: 1, event_id: 3 },
+                     { user_id: 1, event_id: 4 },
+                     { user_id: 1, event_id: 5 },
+                     { user_id: 1, event_id: 6 },
+                     { user_id: 1, event_id: 7 },
+                     { user_id: 2, event_id: 7 },
+                     { user_id: 2, event_id: 5 },
+                     { user_id: 2, event_id: 6 },
+                     { user_id: 1, event_id: 8 },
+                     { user_id: 5, event_id: 8 },
+                     { user_id: 6, event_id: 8 },
+                     { user_id: 7, event_id: 8 }
+                   ])
