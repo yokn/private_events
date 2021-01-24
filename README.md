@@ -6,8 +6,11 @@ A website to create events, public and private. Users can view and register thei
 
 ## Technology used:
 
+### Back-end: 
 * Ruby 2.7.0
 
 * Rails 6.0.3.4
 
 * Heroku 18
+### Front-end:
+* Bulma
