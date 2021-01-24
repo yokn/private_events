@@ -11,13 +11,3 @@ A website to create events, public and private. Users can view and register thei
 * Rails 6.0.3.4
 
 * Heroku 18
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* Deployment instructions
-
-* ...
