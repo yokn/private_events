@@ -1,8 +1,8 @@
-<h1 class="title">Events</h1>
+<div style="display:flex; justify-content:space-between">
+  <h1 class="title">Events</h1>
+  <%= link_to 'New event', new_event_path, class: "button is-primary" %>
+</div>
 <h2 class="subtitle">Upcoming events</h2>
 <%= render 'listing', events: @events.upcoming %>
 <h2 class="subtitle">Past events</h2>
 <%= render 'listing', events: @events.past %>
-<br />
-<%= link_to 'New event', new_event_path %>
-<br />
