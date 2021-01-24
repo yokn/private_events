@@ -13,7 +13,7 @@ User.create!([
 Event.create!([
                 { name: 'my new event!', date: '2021-02-06', location: 'my house', description: 'my description', user_id: 2, private: 0 },
                 { name: 'Birthday Party', date: '2021-01-29', location: "Bob's house", description: 'Bring gifts!', user_id: 1, private: 0 },
-                { name: 'test', date: '2020-12-29', location: '123a', description: '1', user_id: 1, private: 0 },
+                { name: 'test', date: '2021-12-29', location: '123a', description: '1', user_id: 1, private: 0 },
                 { name: '17', date: '2021-01-27', location: '17', description: '17', user_id: 2, private: 0 },
                 { name: 'Mars Oasis', date: '2026-03-14', location: 'Mars', description: 'A slightly bigger step.', user_id: 1, private: 0 },
                 { name: 'Comet Hale–Bopp', date: '4385-01-01', location: 'Human Memorial Hall', description: 'Comet passing near TERRA. Audience required. Please comply.', user_id: 1, private: 0 },
