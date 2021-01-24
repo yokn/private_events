@@ -29,6 +29,8 @@ gem 'bulma-rails', '~> 0.9.1'
 
 gem 'pg'
 
+gem 'seed_dump'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
