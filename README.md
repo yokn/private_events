@@ -1,10 +1,10 @@
 # Private Events
 
-**See live at: https://yokn-private-events.herokuapp.com/
+## See live at: https://yokn-private-events.herokuapp.com/
 
 A website to create events, public and private. Users can view and register their attendances to public events, while the private events require invites from the event creator.
 
-**Technology used:
+## Technology used:
 
 * Ruby 2.7.0
 
