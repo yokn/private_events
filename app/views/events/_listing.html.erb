@@ -13,7 +13,7 @@
             <div><i class="fas fa-calendar"> </i> <%= event.date%></div>
             <div><i class="fas fa-map-marker-alt"> </i> <%= event.location%></div>
             <div><i class="fas fa-user"> </i> <%= event.attendees.size %></div>
-            <div><i class="fas fa-eye"> </i> <%= event.private ? "Private": "Public"%></div>
+            <div><i class="fas fa-eye"> </i> <%= (event.private == 1) ? "Private": "Public"%></div>
           </div>
         </div>
         <div class="card-content">
