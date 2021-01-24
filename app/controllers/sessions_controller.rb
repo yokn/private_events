@@ -8,11 +8,13 @@ class SessionsController < ApplicationController
     if @user
       session[:current_user_id] = @user.id
       flash[:login_success] = 'Logged in!'
+
+      # TODO: find a way to redirect back
+      redirect_to root_path
     else
       flash[:error] = 'Could not login'
+      render :new
     end
-    # need to find a way to redirect back
-    redirect_to root_path
   end
 
   def destroy
