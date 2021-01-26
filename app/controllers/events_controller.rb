@@ -21,7 +21,9 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit; end
+  def edit
+    return redirect_to @event, flash: { error: 'You are not the creator of this event' } if current_user != @event.user
+  end
 
   # POST /events
   # POST /events.json
