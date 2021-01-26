@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   def show; end
 
   def destroy
+    return redirect_to users_path, flash: { error: 'You cannot delete other users' } if current_user != @user
+
     session[:current_user_id] = nil
     @user.destroy
     respond_to do |format|
