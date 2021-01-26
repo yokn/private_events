@@ -20,12 +20,12 @@
 <table>
   <thead>
     <tr>
-      <th>Previously attended events</th>
+      <th>Upcoming events</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
-    <% @user.attended_events.past.each do |event|  %>
+    <% @user.attended_events.upcoming.each do |event|  %>
       <tr>
         <td><%= link_to event.name , event_path(event) %></td>
       </tr>
@@ -35,12 +35,12 @@
 <table>
   <thead>
     <tr>
-      <th>Upcoming events</th>
+      <th>Previously attended events</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
-    <% @user.attended_events.upcoming.each do |event|  %>
+    <% @user.attended_events.past.each do |event|  %>
       <tr>
         <td><%= link_to event.name , event_path(event) %></td>
       </tr>
