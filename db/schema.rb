@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_170506) do
+ActiveRecord::Schema.define(version: 2021_01_23_164812) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.index ["event_id"], name: "index_attendances_on_event_id"
+    t.index ["user_id"], name: "index_attendances_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.text "name"
+    t.date "date"
+    t.text "location"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "private", default: 0
+  end
 
   create_table "users", force: :cascade do |t|
     t.text "username"
@@ -18,4 +41,6 @@ ActiveRecord::Schema.define(version: 2020_12_22_170506) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "attendances", "events"
+  add_foreign_key "attendances", "users"
 end
