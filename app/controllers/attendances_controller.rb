@@ -24,7 +24,7 @@ class AttendancesController < ApplicationController
   # POST /attendances
   # POST /attendances.json
   def create
-    uid = params[:user_id] || dig_user
+    uid = params[:user_id] || User.find_by_username(params[:attendance][:attendee]).id
     eid = params[:event_id]
     a = Attendance.new(user_id: uid, event_id: eid)
     if a.save
@@ -73,11 +73,6 @@ class AttendancesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def attendance_params
-    params.fetch(:attendance, {}).permit(:user_id, :event_id, :attendee)
-  end
-
-  def dig_user
-    User.find_by_username(params[:attendance].dig(:attendee)).id
-  rescue StandardError
+    params.fetch(:attendance, {}).permit(:user_id, :event_id, attendance: [:attendee])
   end
 end
