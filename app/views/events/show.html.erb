@@ -18,6 +18,9 @@
   <strong>Created by: </strong>
   <%= @event.user.username%>
 </p>
+<p>
+  <%= (@event.private == 1) ? "Private": "Public" %> event
+</p>
 <table>
   <thead>
     <tr>
