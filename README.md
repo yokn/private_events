@@ -16,3 +16,9 @@ A website to create events, public and private. Users can view and register thei
 
 ### Deployment:
 * Heroku 18
+
+### Events listing
+![Events page](img/events.png?raw=true "Events listing")
+
+### New event creation
+![New Event Page](img/new_event.png?raw=true "New event creation")
